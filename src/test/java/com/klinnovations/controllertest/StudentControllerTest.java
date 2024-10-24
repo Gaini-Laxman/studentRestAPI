@@ -20,7 +20,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.Arrays;
 import java.util.List;
 
-public class StudentControllerTest {
+ class StudentControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -38,7 +38,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void testCreateStudent() throws Exception {
+     void testCreateStudent() throws Exception {
         Student student = new Student(1, "John", "Doe", "john.doe@example.com", 1234567890L, 1000.0);
         when(studentService.createStudent(any(Student.class))).thenReturn(student);
 
@@ -55,7 +55,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void testGetStudentById() throws Exception {
+     void testGetStudentById() throws Exception {
         Student student = new Student(1, "John", "Doe", "john.doe@example.com", 1234567890L, 1000.0);
 
         when(studentService.getStudentById(1)).thenReturn(student);
@@ -71,7 +71,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void testGetAllStudents() throws Exception {
+    void testGetAllStudents() throws Exception {
         Student student1 = new Student(1, "John", "Doe", "john.doe@example.com", 1234567890L, 1000.0);
         Student student2 = new Student(2, "Jane", "Doe", "jane.doe@example.com", 9876543210L, 1500.0);
 
@@ -89,7 +89,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void testUpdateStudent() throws Exception {
+     void testUpdateStudent() throws Exception {
         Student updatedStudent = new Student(1, "John Updated", "Doe", "john.updated@example.com", 1234567890L, 1100.0);
 
         when(studentService.updateStudent(eq(1), any(Student.class))).thenReturn(updatedStudent);
@@ -107,7 +107,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void testDeleteStudent() throws Exception {
+     void testDeleteStudent() throws Exception {
         doNothing().when(studentService).deleteStudent(1);
 
         mockMvc.perform(delete("/api/students/1"))
