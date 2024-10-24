@@ -30,4 +30,6 @@ public class Student {
 	
 	private Double amount;
 	
+	
+	
 }
