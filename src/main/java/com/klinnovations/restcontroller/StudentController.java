@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.klinnovations.entity.Student;
 import com.klinnovations.service.StudentService;
 
+
+//http://localhost:1001/swagger-ui/index.html#/
 @RestController
 @RequestMapping("/api/students")
 //@CrossOrigin(origins = "http://localhost:4200")
